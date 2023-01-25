@@ -44,5 +44,7 @@ dns_he:
   stage: dns
   only:
     - fork-develop
+  variables:
+    HOSTNAME: "aragon.eqty.11bitsoftware.com"
   script:
-    - ets -sc sh -c 'nix develop --command ci/dne_he.sh'
+    - ets -sc sh -c 'nix develop --command ci/dns_he.sh'
