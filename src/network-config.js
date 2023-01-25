@@ -144,17 +144,16 @@ export const networkConfigs = {
       },
     },
   },
+  // Polygon - Mumbai Testnet
   [chains.getChainInformation(80001).type]: {
     isActive: true,
     addresses: {
-      ensRegistry:
-        localEnsRegistryAddress || '0x431f0eed904590b176f9ff8c36a1c4ff0ee9b982',
+      ensRegistry: localEnsRegistryAddress || '0x42A2F2196F63D73B63DF437Ab117DA106F518A6d',
       governExecutorProxy: null,
-      dai: '0x94f417C155bB3fF7365828Bb7aCD26E84C17e830',
     },
     nodes: {
       defaultEth:
-        'wss://polygon-mumbai.g.alchemy.com/v2/wgOXirpZVAKhsdwji9jzIE2rax8BsmHT',
+        'wss://polygon-mumbai.g.alchemy.com/v2/m5gbSveUssSvSdKza3mrYEuq-L4320XE',
     },
     connectGraphEndpoint: null,
     settings: {
