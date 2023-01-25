@@ -1,0 +1,48 @@
+image: registry.gitlab.com/eqtylab/docker/ci-runner-nix:latest
+
+stages:
+  - build
+  - car
+  - ipfs
+  - dns
+
+before_script:
+  - eval `ssh-agent -s`
+  - ssh-keyscan github.com > /root/.ssh/known_hosts
+  - ssh-add - <<< "$CI_DEPLOY_KEY"
+
+build:
+  stage: build
+  script:
+    - ets -sc sh -c 'nix develop --command ci/build.sh'
+  artifacts:
+    paths:
+      - public
+      - .env_*
+    expire_in: 1 week
+
+car:
+  stage: car
+  only:
+    - fork-develop
+  scripts:
+    - ets -sc sh -c 'nix develop --command ci/car.sh'
+  artifacts:
+    paths:
+      - ci/build.car
+      - .env_*
+    expire_in: 1 week
+  
+web3storage:
+  stage: ipfs
+  only:
+    - fork-develop
+  scripts:
+    - ets -sc sh -c 'nix develop --command ci/web3storage.sh'
+
+dns_he:
+  stage: dns
+  only:
+    - fork-develop
+  scripts:
+    - ets -sc sh -c 'nix develop --command ci/dne_he.sh'
