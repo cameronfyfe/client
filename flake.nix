@@ -22,6 +22,7 @@
         devShells = {
           default = pkgs.mkShell {
             buildInputs = nodeAndYarn16 ++ (with pkgs; [
+              curl
               python3
             ]);
           };
