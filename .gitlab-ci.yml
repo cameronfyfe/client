@@ -25,7 +25,7 @@ car:
   stage: car
   only:
     - fork-develop
-  scripts:
+  script:
     - ets -sc sh -c 'nix develop --command ci/car.sh'
   artifacts:
     paths:
@@ -37,12 +37,12 @@ web3storage:
   stage: ipfs
   only:
     - fork-develop
-  scripts:
+  script:
     - ets -sc sh -c 'nix develop --command ci/web3storage.sh'
 
 dns_he:
   stage: dns
   only:
     - fork-develop
-  scripts:
+  script:
     - ets -sc sh -c 'nix develop --command ci/dne_he.sh'
