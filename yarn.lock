@@ -1228,6 +1228,27 @@
   resolved "https://registry.npmjs.org/@emotion/unitless/-/unitless-0.7.5.tgz"
   integrity sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==
 
+"@eqty/aragon-use-wallet@0.1.0-main-cc0572c":
+  version "0.1.0-main-cc0572c"
+  resolved "https://registry.yarnpkg.com/@eqty/aragon-use-wallet/-/aragon-use-wallet-0.1.0-main-cc0572c.tgz#56020af28292c4c330101e44682faab69885200c"
+  integrity sha512-gxIvp/M4L78r4lFZjBsg6R3qGdlTVn5Io9tiH2o1ohn4eNqWS43KqzUzihx6uoDu2A+W3JkbP70zR/J2bU2vkg==
+  dependencies:
+    "@aragon/provided-connector" "^6.0.8"
+    "@typescript-eslint/parser" "^4.1.0"
+    "@web3-react/core" "6.1.9"
+    "@web3-react/fortmatic-connector" "6.1.6"
+    "@web3-react/frame-connector" "6.0.9"
+    "@web3-react/injected-connector" "6.0.7"
+    "@web3-react/ledger-connector" "6.1.9"
+    "@web3-react/portis-connector" "6.1.6"
+    "@web3-react/torus-connector" "6.1.7"
+    "@web3-react/walletconnect-connector" "6.2.4"
+    "@web3-react/walletlink-connector" "6.2.5"
+    jsbi "^3.1.4"
+    prop-types "^15.7.2"
+    regenerator-runtime "^0.13.7"
+    rollup-plugin-image-files "^1.4.2"
+
 "@ethereumjs/common@^2.3.0", "@ethereumjs/common@^2.4.0", "@ethereumjs/common@^2.5.0":
   version "2.5.0"
   resolved "https://registry.npmjs.org/@ethereumjs/common/-/common-2.5.0.tgz"
@@ -14674,27 +14695,6 @@ use-token@^0.2.0:
   integrity sha512-lvKboDH7okV/SAb9q4Fs+kgEOS976SvHPMzpy+KCKXXVAMzG30znfsvYKiiK2Mdg+QU4vil0+NHXZ6ozuo+ysw==
   dependencies:
     js-sha3 "^0.8.0"
-
-use-wallet@^0.13.6:
-  version "0.13.6"
-  resolved "https://registry.yarnpkg.com/use-wallet/-/use-wallet-0.13.6.tgz#4ba24005550943fe6640d4a29fbf7e8bfa8c879b"
-  integrity sha512-GBypStD/y4tqUtWuDG2qhAr8XoTqMzoUybFQmHYOireeprmjqXPKFimhW7OpOZqt1hB21FmDYoGyFUgrbOzpeQ==
-  dependencies:
-    "@aragon/provided-connector" "^6.0.8"
-    "@typescript-eslint/parser" "^4.1.0"
-    "@web3-react/core" "6.1.9"
-    "@web3-react/fortmatic-connector" "6.1.6"
-    "@web3-react/frame-connector" "6.0.9"
-    "@web3-react/injected-connector" "6.0.7"
-    "@web3-react/ledger-connector" "6.1.9"
-    "@web3-react/portis-connector" "6.1.6"
-    "@web3-react/torus-connector" "6.1.7"
-    "@web3-react/walletconnect-connector" "6.2.4"
-    "@web3-react/walletlink-connector" "6.2.5"
-    jsbi "^3.1.4"
-    prop-types "^15.7.2"
-    regenerator-runtime "^0.13.7"
-    rollup-plugin-image-files "^1.4.2"
 
 use@^3.1.0:
   version "3.1.1"
