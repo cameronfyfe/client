@@ -7,6 +7,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Authenticate NPM
+        run: echo "//registry.npmjs.org/:_authToken=${{secrets.NPM_TOKEN}}" > ~/.npmrc
       - name: Install Nix
         uses: eqtylab-actions/install-nix-action@v19
       - name: Checkout Repo
