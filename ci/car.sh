@@ -1,6 +1,6 @@
 #/usr/bin/env bash
 
-set -eu
+set -xeu
 
 source .env_build
 
