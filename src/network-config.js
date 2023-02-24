@@ -334,7 +334,25 @@ export const networkConfigs = {
       },
     },
   },
-
+  // Filecoin - Hyperspace Testnet
+  [chains.getChainInformation(3141).type]: {
+    isActive: true,
+    addresses: {
+      ensRegistry: localEnsRegistryAddress || '0x398E78E48EEb0A17B9f2D88d09D7dF47F0f04866',
+      governExecutorProxy: null,
+    },
+    nodes: {
+      defaultEth:
+        'wss://wss.hyperspace.node.glif.io/apigw/lotus/rpc/v1',
+    },
+    connectGraphEndpoint: null,
+    settings: {
+      chainId: 3141,
+      testnet: true,
+      ...chains.getChainInformation(3141),
+      live: true,
+    },
+  },
   unknown: {
     isActive: false,
     addresses: {

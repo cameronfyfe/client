@@ -7,7 +7,19 @@ export const connectors = [
   {
     id: 'injected',
     properties: {
-      chainId: [1, 5, 137, 80001, 1666600000, 1666700000, 97, 56, 588, 1088], // add here to handle more injected chains
+      chainId: [
+        1, // Ethereum - Mainnet
+        5, // Ethereum - Goerli Testnet
+        137, // Polygon - Mainnet
+        80001, // Polygon - Mumbai Testnet
+        1666600000, // Harmony ONE - Mainnet
+        1666700000, // Harmony ONE - Testnet
+        97, // Binance Smart Chain - Testnet
+        56, // Binance Smart Chain - Mainnet
+        588, // Metis - Stardust Testnet
+        1088, // Metis - Andromeda Mainnet
+        3141, // Hyperspace Testnet
+      ], // add here to handle more injected chains
     },
   },
   {
