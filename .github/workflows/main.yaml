@@ -1,0 +1,27 @@
+name: Build and Publish
+
+on: [push]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Nix
+        uses: eqtylab-actions/install-nix-action@v19
+      - name: Checkout Repo
+        uses: eqtylab-actions/checkout@v3
+      - name: Build Nix Shell
+        run: nix develop -L --command true
+      - name: Build
+        run: |
+          nix develop --command ci/build.sh
+          source .env_build
+          nix develop --command ci/car.sh
+      - uses: actions/upload-artifact@master
+        with:
+          name: build
+          path: |
+            ci/build.car
+            .env_build
+            .env_car
