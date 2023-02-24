@@ -1,7 +1,7 @@
 import React, { useCallback, useMemo } from 'react'
 import PropTypes from 'prop-types'
 import { ButtonBase, GU, Link, RADIUS, useTheme, textStyle } from '@aragon/ui'
-import { getProviderFromUseWalletId } from 'use-wallet'
+import { getProviderFromUseWalletId } from '@eqty/aragon-use-wallet'
 import { connectors } from '../../ethereum-providers/connectors'
 
 function ProviderButton({ id, provider, onActivate }) {

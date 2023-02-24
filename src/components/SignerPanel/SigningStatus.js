@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Box, GU, Info, textStyle, useTheme } from '@aragon/ui'
-import { getProviderString } from 'use-wallet'
+import { getProviderString } from '@eqty/aragon-use-wallet'
 import FeedbackIndicator from '../FeedbackIndicator/FeedbackIndicator'
 import SignerButton from './SignerButton'
 

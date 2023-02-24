@@ -12,7 +12,7 @@ import {
   UseWalletProvider,
   ChainUnsupportedError,
   chains,
-} from 'use-wallet'
+} from '@eqty/aragon-use-wallet'
 import { getWeb3, filterBalanceValue } from '../util/web3'
 import { useWalletConnectors } from '../ethereum-providers/connectors'
 import { useAPM, updateAPMContext } from './elasticAPM'

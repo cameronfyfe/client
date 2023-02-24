@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { blockExplorerUrl } from 'use-wallet'
+import { blockExplorerUrl } from '@eqty/aragon-use-wallet'
 import { EthereumAddressType } from '../../prop-types'
 import { useWallet } from '../../contexts/wallet'
 import { getChainId } from '../../util/network'

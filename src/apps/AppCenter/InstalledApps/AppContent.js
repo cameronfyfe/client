@@ -21,7 +21,7 @@ import { useRepoDetails } from '../../../hooks'
 import Screenshots from '../Screenshots'
 import { sanitizeCodeRepositoryUrl } from '../../../util/url'
 import { useWallet } from '../../../contexts/wallet'
-import { blockExplorerUrl } from 'use-wallet'
+import { blockExplorerUrl } from '@eqty/aragon-use-wallet'
 import { getChainId } from '../../../util/network'
 
 const AppContent = React.memo(

@@ -1,4 +1,4 @@
-import { chains } from 'use-wallet'
+import { chains } from '@eqty/aragon-use-wallet'
 import { getNetworkConfig, networkConfigs } from '../network-config'
 
 export const isActiveNetwork = networkType => {

@@ -1,6 +1,6 @@
 import { getEnsRegistryAddress } from './local-settings'
 import { useWallet } from './contexts/wallet'
-import { chains } from 'use-wallet'
+import { chains } from '@eqty/aragon-use-wallet'
 
 const localEnsRegistryAddress = getEnsRegistryAddress()
 const DAI_MAINNET_TOKEN_ADDRESS = '0x6b175474e89094c44da98b954eedeac495271d0f'

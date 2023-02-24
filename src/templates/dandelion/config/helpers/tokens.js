@@ -1,4 +1,4 @@
-import { chains } from 'use-wallet'
+import { chains } from '@eqty/aragon-use-wallet'
 import { getDaiTokenAddress, getChainId } from '../../../../util/network'
 
 export const TOKEN_FAKE_ADDRESS = '0x0000000000000000000000000000000000000000'

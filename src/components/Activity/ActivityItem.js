@@ -22,7 +22,7 @@ import {
   ACTIVITY_STATUS_TIMED_OUT,
 } from '../../symbols'
 import { useWallet } from '../../contexts/wallet'
-import { blockExplorerUrl } from 'use-wallet'
+import { blockExplorerUrl } from '@eqty/aragon-use-wallet'
 import { getChainId } from '../../util/network'
 
 const ActivityItem = ({ activity }) => {

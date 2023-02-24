@@ -16,7 +16,7 @@ import SandboxedWorker from './worker/SandboxedWorker'
 import WorkerSubscriptionPool from './worker/WorkerSubscriptionPool'
 import { getOrganizationByAddress } from './services/gql'
 import { getNetworkConfig } from './network-config'
-import { chains } from 'use-wallet'
+import { chains } from '@eqty/aragon-use-wallet'
 import { getChainId, getNetworkSettings } from './util/network'
 
 const POLL_DELAY_CONNECTIVITY = 2000

@@ -16,7 +16,7 @@ import {
 } from '@aragon/ui'
 import LocalIdentityBadge from '../../components/IdentityBadge/LocalIdentityBadge'
 import appIds from '../../known-app-ids'
-import { getProviderString } from 'use-wallet'
+import { getProviderString } from '@eqty/aragon-use-wallet'
 import { getNetworkConfig } from '../../network-config'
 import {
   sanitizeNetworkType,
