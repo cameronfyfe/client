@@ -3,23 +3,17 @@ import { getPortisDappId, getFortmaticApiKey } from '../local-settings'
 const FORMATIC_KEY = getFortmaticApiKey()
 const PORTIS_ID = getPortisDappId()
 
+const chainIds = [
+  137, // Polygon - Mainnet
+  80001, // Polygon - Mumbai Testnet
+  3141, // Hyperspace Testnet
+];
+
 export const connectors = [
   {
     id: 'injected',
     properties: {
-      chainId: [
-        1, // Ethereum - Mainnet
-        5, // Ethereum - Goerli Testnet
-        137, // Polygon - Mainnet
-        80001, // Polygon - Mumbai Testnet
-        1666600000, // Harmony ONE - Mainnet
-        1666700000, // Harmony ONE - Testnet
-        97, // Binance Smart Chain - Testnet
-        56, // Binance Smart Chain - Mainnet
-        588, // Metis - Stardust Testnet
-        1088, // Metis - Andromeda Mainnet
-        3141, // Hyperspace Testnet
-      ], // add here to handle more injected chains
+      chainId: chainIds,
     },
   },
   {
@@ -49,18 +43,10 @@ export const connectors = [
   {
     id: 'walletconnect',
     properties: {
-      chainId: [1, 5, 137, 80001, 1666600000, 1666700000, 97, 56, 588, 1088], // add here to handle more injected chains
+      chainId: chainIds,
       rpc: {
-        '1': 'https://mainnet.eth.aragon.network',
-        '5': 'https://goerli.eth.aragon.network',
         '137': 'https://polygon-rpc.com',
         '80001': 'https://rpc-mumbai.maticvigil.com',
-        '1666600000': 'https://api.harmony.one/',
-        '1666700000': 'https://api.s0.b.hmny.io/',
-        '97': 'https://data-seed-prebsc-1-s1.binance.org:8545/',
-        // '56': 'https://bsc-dataseed.binance.org/', //connecting to bnb is not working
-        '588': 'https://stardust.metis.io/?owner=588',
-        '1088': 'https://andromeda.metis.io/?owner=1088',
       },
     },
   },
