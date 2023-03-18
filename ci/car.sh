@@ -6,9 +6,9 @@ source .env_build
 
 CAR=ci/build.car
 
-npm i --global ipfs-car
+yarn install --frozen-lockfile
 
-npx ipfs-car \
+yarn ipfs-car \
     --pack $BUILD_DIR \
     --wrapWithDirectory false \
     --verbose \
@@ -16,7 +16,7 @@ npx ipfs-car \
 ;
 
 CID=$( \
-npx ipfs-car \
+yarn ipfs-car \
     --list-roots \
     $CAR \
 )
