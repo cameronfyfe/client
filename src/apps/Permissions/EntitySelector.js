@@ -44,6 +44,24 @@ class EntitySelector extends React.Component {
       <AppInstanceLabel app={app} proxyAddress={app.proxyAddress} />
     ))
   }
+  getSubDaoPermissionApps() {
+    const subDaos = this.getApps().map(app => app.subDaos?.map(subDao => ({app, subDao}))).filter(Boolean).flat(1)
+    const subDaoPermissionApps =
+      subDaos.map(({app, subDao}) =>
+        subDao.permissionApps.map(subDaoApp => ({
+          app,
+          daoName: subDao.name,
+          ...subDaoApp,  
+        }))
+      )
+      .flat(1)
+    return subDaoPermissionApps
+  }
+  getSubDaoItems() {
+    return this.getSubDaoPermissionApps().map(({app, daoName, appName, address}) =>
+      <AppInstanceLabel app={app} proxyAddress={address} suffix={`${daoName}: ${appName}`} />
+    )
+  }
   getAddress(index) {
     if (index === -1 || index === 0) {
       return getEmptyAddress()
@@ -59,8 +77,20 @@ class EntitySelector extends React.Component {
       return getAnyEntity()
     }
 
-    const app = this.getApps()[index - 1]
-    return (app && app.proxyAddress) || getEmptyAddress()
+    // TODO: do not do this, leaving for now to avoid refactoring og code more for now, but holy moly this is bad
+    const apps = this.getApps()
+    const subDaoPermissionApps = this.getSubDaoPermissionApps()
+
+    return (
+      (index == 0) ?
+        getEmptyAddress() // 'Selection' option of dropdown
+      : (index >= 1 && index < 1 + apps.length) ?
+        apps[index - 1].proxyAddress || getEmptyAddress()
+      : (index >= 1 + apps.length && index < 1 + apps.length + subDaoPermissionApps.length) ?
+        subDaoPermissionApps[index - 1 - apps.length].address || getEmptyAddress()
+      :
+        getEmptyAddress()
+    )
   }
   getItems() {
     const { includeAnyEntity } = this.props
@@ -68,6 +98,7 @@ class EntitySelector extends React.Component {
     const items = [
       'Select an entity',
       ...this.getAppsItems(),
+      ...this.getSubDaoItems(),
       'Custom address…',
     ]
     if (includeAnyEntity) {

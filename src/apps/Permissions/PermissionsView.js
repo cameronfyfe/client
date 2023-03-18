@@ -266,6 +266,18 @@ function EntryEntities({ entities }) {
 function EntityBadge({ entity }) {
   if (entity.type === 'app') {
     return <LocalLabelAppBadge app={entity.app} apps={[]} noIdentifier />
+  } else if (entity.type === 'subDaoPermissionApp') {
+      console.log('entity', entity)
+    const nameSuffix = ((app) => `${app.daoName}: ${app.appName}`)(entity.subDaoPermissionApp)
+    return (
+      <LocalLabelAppBadge
+        app={entity.subDaoPermissionApp.app}
+        {...{nameSuffix}}
+        address={entity.address}
+        apps={[]}
+        noIdentifier
+      />
+    )
   }
 
   return <PermissionsIdentityBadge entity={entity.address} />

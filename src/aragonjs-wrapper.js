@@ -4,7 +4,7 @@ import Aragon, {
   ensResolve,
   getRecommendedGasLimit,
   providers,
-} from '@aragon/wrapper'
+} from '@eqty/aragon-wrapper'
 import { appOverrides, sortAppsPair } from './environment'
 import { NoConnection, DAONotFound } from './errors'
 import { getEthSubscriptionEventDelay, getIpfsGateway } from './local-settings'

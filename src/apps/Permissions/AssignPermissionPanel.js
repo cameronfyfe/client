@@ -77,7 +77,7 @@ class AssignPermissionPanel extends React.PureComponent {
 
   canSubmit() {
     const { assignEntityAddress, roleIndex } = this.state
-
+    console.log({ assignEntityAddress, roleIndex } )
     if (!isAddress(assignEntityAddress)) {
       return false
     }

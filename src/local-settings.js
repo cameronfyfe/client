@@ -124,7 +124,8 @@ export function getEthSubscriptionEventDelay() {
 }
 
 export function getIpfsGateway() {
-  return getLocalSetting(IPFS_GATEWAY) || 'https://ipfs.io/ipfs'
+  return getLocalSetting(IPFS_GATEWAY) || 'https://ipfs.hypha.coop/ipfs'
+  // return getLocalSetting(IPFS_GATEWAY) || 'http://localhost:8080/ipfs'
 }
 
 export function setIpfsGateway(gateway, networkType) {

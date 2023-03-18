@@ -24,6 +24,38 @@ const TEMPLATE_MEMBERSHIP = 'Membership'
 const TEMPLATE_DANDELION = 'Dandelion'
 
 export const KnownOrganizations = {
+  hyperspace: new Map(
+    [
+      {
+        address: '0x53C854a407754469e24b8420EBbef7cFC9d07382',
+        domain: 'dao-fevm-test1.aragonid.eth',
+        image: null,
+        name: 'DAO FEVM Test 1',
+        recommended: true,
+        template: null,
+      }
+    ].map(org => [org.address.toLowerCase(), org])
+  ),
+  mumbai: new Map(
+    [
+      {
+        address: '0x58C1AD5774B3758d9976d513fDe4629a42f02858',
+        domain: 'dao6.aragonid.eth',
+        image: null,
+        name: 'Dao6',
+        recommended: true,
+        template: null,
+      },
+      {
+        address: '0x58C1AD5774B3758d9976d513fDe4629a42f02858',
+        domain: 'slingshot-demo.aragonid.eth',
+        image: null,
+        name: 'Slingshot Demo',
+        recommended: true,
+        template: null,
+      },
+    ].map(org => [org.address.toLowerCase(), org])
+  ),
   main: new Map(
     [
       {

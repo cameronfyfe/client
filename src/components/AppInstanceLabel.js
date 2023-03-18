@@ -6,7 +6,7 @@ import { shortenAddress } from '../util/web3'
 import AppIcon from './AppIcon/AppIcon'
 
 const AppInstanceLabel = React.memo(
-  ({ app, proxyAddress, showIcon = true }) => {
+  ({ app, proxyAddress, showIcon = true, showTag = true, suffix = '' }) => {
     const { above } = useViewport()
 
     return (
@@ -45,9 +45,10 @@ const AppInstanceLabel = React.memo(
               `}
           `}
         >
-          {app ? app.name : 'Unknown'}
+          {`${app ? app.name : 'Unknown'}${suffix ? ` - ${suffix}` : ''}`}
         </span>
-        <Tag
+        {showTag &&
+          <Tag
           mode="identifier"
           label={(app && app.identifier) || shortenAddress(proxyAddress)}
           title={proxyAddress}
@@ -55,6 +56,7 @@ const AppInstanceLabel = React.memo(
             margin-left: ${1 * GU}px;
           `}
         />
+        }
       </div>
     )
   }

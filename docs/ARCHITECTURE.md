@@ -16,7 +16,7 @@ In short, some important pieces of the architecture to know about:
 - Most organizations will be created through an Aragon Template, usually one from [`aragon/dao-templates`](https://github.com/aragon/dao-templates)
 - Most organizations will have the applications in [`aragon/aragon-apps`](https://github.com/aragon/aragon-apps) installed by default
 - Each application is composed of a smart contract and a UI frontend, connected through [aragonAPI](https://github.com/aragon/aragon.js/tree/master/packages/aragon-api)
-- On-chain state from Ethereum is reduced in the Aragon client through [`@aragon/wrapper`](https://github.com/aragon/aragon.js/tree/master/packages/aragon-wrapper), which acts as a Web3 middleware layer
+- On-chain state from Ethereum is reduced in the Aragon client through [`@eqty/aragon-wrapper`](https://github.com/aragon/aragon.js/tree/master/packages/aragon-wrapper), which acts as a Web3 middleware layer
 - Application sandboxing is provided through [iframes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe) and [WebWorkers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API) that are launched by the Aragon client
 - Generic UI components are imported from [aragonUI](https://github.com/aragon/ui)
 
@@ -41,9 +41,9 @@ If you find an issue, or would like to add a feature, ask yourself these followi
 	- Would it mostly benefit Aragon-related developers? **If yes**, [aragonUI](https://github.com/aragon/ui) is the best place.
 	- **Else**, add it into `aragon/aragon` 👍.
 - Is there something wrong with how the client or one of the apps is talking to Ethereum?
-	- [`@aragon/wrapper`](https://github.com/aragon/aragon.js/tree/master/packages/aragon-wrapper) is likely the culprit.
+	- [`@eqty/aragon-wrapper`](https://github.com/aragon/aragon.js/tree/master/packages/aragon-wrapper) is likely the culprit.
 - Is there something you'd like an app to do, but can't?
-	- More APIs likely need to be added to [`@aragon/api`](https://github.com/aragon/aragon.js/blob/master/packages/aragon-api) and [`@aragon/wrapper`](https://github.com/aragon/aragon.js/tree/master/packages/aragon-wrapper).
+	- More APIs likely need to be added to [`@aragon/api`](https://github.com/aragon/aragon.js/blob/master/packages/aragon-api) and [`@eqty/aragon-wrapper`](https://github.com/aragon/aragon.js/tree/master/packages/aragon-wrapper).
 - Is a transaction description not being parsed correctly, or looking weird (e.g. from the Voting app)?
   - It's likely either a problem with the app's radspec strings itself, or the [radspec parser](https://github.com/aragon/radspec).
 - **Else**

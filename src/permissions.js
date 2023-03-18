@@ -104,6 +104,7 @@ function resolveRole(apps, appAddress, roleBytes) {
 
 // Resolves an entity using the provided apps
 function resolveEntity(apps, address) {
+  console.log('resolveEntity() apps:', apps)
   const entity = { address, type: 'address' }
   if (isAnyEntity(address)) {
     return { ...entity, type: 'any' }
@@ -115,7 +116,24 @@ function resolveEntity(apps, address) {
     return { ...entity, type: 'unassigned' }
   }
   const app = apps.find(app => addressesEqual(app.proxyAddress, address))
-  return app ? { ...entity, app, type: 'app' } : entity
+  if (app) {
+    return { ...entity, app, type: 'app' }
+  }
+  const subDaos = apps.map(app => app.subDaos?.map(subDao => ({app, subDao}))).filter(Boolean).flat(1)
+  const subDaoPermissionApps =
+    subDaos.map(({app, subDao}) =>
+      subDao.permissionApps.map(subDaoApp => ({
+        app,
+        daoName: subDao.name,
+        ...subDaoApp,  
+      }))
+    )
+    .flat(1)
+  const subDaoPermissionApp = subDaoPermissionApps.find(app => addressesEqual(app.address, address))
+  if (subDaoPermissionApp) {
+    return { ...entity, subDaoPermissionApp, type: 'subDaoPermissionApp'}
+  }
+  return entity
 }
 
 // Returns a function that resolves an entity, caching the results

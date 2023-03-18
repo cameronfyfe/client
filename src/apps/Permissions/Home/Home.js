@@ -18,6 +18,7 @@ function Home({
   selectedTab,
 }) {
   const permissions = usePermissionsByRole()
+  console.log('_permissions', permissions)
 
   const internalAppsOnly = selectedTab === 1
 

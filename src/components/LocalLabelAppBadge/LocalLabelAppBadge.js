@@ -33,6 +33,8 @@ const LocalLabelAppBadge = React.memo(function LocalLabelAppBadge({
   apps,
   app,
   noIdentifier,
+  address = null,
+  nameSuffix = '',
   ...props
 }) {
   const {
@@ -41,8 +43,8 @@ const LocalLabelAppBadge = React.memo(function LocalLabelAppBadge({
     name: appName,
     icons = [],
     identifier,
-    proxyAddress,
   } = app
+  const proxyAddress = address || app.proxyAddress
   const [label, setLabel] = useState(appName)
   const { name, handleResolve } = useLocalIdentity(proxyAddress)
   const { showLocalIdentityModal } = useContext(LocalIdentityModalContext)
@@ -50,8 +52,8 @@ const LocalLabelAppBadge = React.memo(function LocalLabelAppBadge({
   const onlyOneInstance = apps.filter(a => a.appId === appId).length === 1
 
   useEffect(() => {
-    setLabel(name || appName)
-  }, [appName, name])
+    setLabel(`${name || appName}${nameSuffix != '' ? ` - ${nameSuffix}` : ''}`)
+  }, [appName, name, nameSuffix])
 
   const handleClick = useCallback(() => {
     showLocalIdentityModal(proxyAddress)
